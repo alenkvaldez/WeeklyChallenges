@@ -48,10 +48,15 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            if (numbers == null || numbers.Count() == 0)
+            if (numbers == null)
             {
                 return 0;
             }
+            if (numbers.Count() == 0)
+            {
+                return 0;
+            }
+
             return numbers.Min() + numbers.Max();
         }
 
@@ -69,18 +74,19 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
-            {
+            
                 if (numbers == null)
-                    return 0;
+            {
+                return 0;
             }
-
+                 
             int sum = 0;
 
             for (int i = 0; i < numbers.Length; i++)
             {
                 sum += numbers[i];
             }
-            return evenSum;
+            return sum;
             }
    
 
@@ -91,7 +97,22 @@ namespace ChallengesWithTestsMark8
             {
                 return 0;
             }
+
+            var evenSum = 0;
+
+            for (int i = 0; i <numbers.Length; i++)
+            {
+                if (numbers[i] % 2 == 0)
+                {
+                    evenSum += numbers[i];
+                }
+            }
+
+            return evenSum;
         }
+
+
+        
 
         public bool IsSumOdd(List<int> numbers)
         {
@@ -99,7 +120,9 @@ namespace ChallengesWithTestsMark8
             {
                 return false;
             }
-            return numbers.Sum() % 2 != 0;
+
+
+            return numbers.Sum() % 2 != 0); 
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
